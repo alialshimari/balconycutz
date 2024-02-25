@@ -1,0 +1,212 @@
+/* Enhanced Reset and Basics */
+*, *::before, *::after {
+  box-sizing: border-box;
+
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* More modern and clean */
+  background-color: #FAFAFA; /* Lighter shade for a fresh look */
+  color: #333;
+}
+
+/* Enhanced Header and Navigation */
+header {
+  background-color: #007BFF; /* Brighter blue for a lively look */
+  color: #FFF;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 200;
+}
+header h1 {
+  font-size: 2.5rem; /* Slightly larger for emphasis */
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px; /* For better spacing */
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded edges for a softer look */
+  transition: background-color 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #0056b3; /* Darker shade on hover for contrast */
+}
+
+/* Main Image Adjustments */
+#main-image {
+  /* Improved styling removed to focus on content */
+  background: url('balcony.jpeg') no-repeat center center / cover;
+  padding: 100px 20px; /* Adjusted padding for better spacing */
+  position: relative;
+
+}
+#main-image img {
+  width: 100%;
+  height: 500px;
+}
+
+#main-title {
+  position: relative; /* This ensures that the absolute positioning of its children is relative to this container */
+  width: 100%; /* Ensures the container stretches across the screen */
+}
+
+#main-title h3 {
+  font-size: 35px;
+  font-weight: bold;
+  color: red;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  text-align: center;
+}
+
+#main-title h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: lightblue;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  text-align: center;
+}
+
+
+
+/* Services Section Enhancements */
+#services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align items */
+  gap: 20px; /* Consistent spacing */
+  padding: 50px 10%;
+}
+.service-item {
+  flex: 1;
+  min-width: 250px; /* Minimum width for better control */
+  max-width: 300px; /* Max width to avoid too large items */
+  margin: 10px;
+  padding: 20px;
+  background-color: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+/* Enhanced Reviews, Booking, and Contact Sections */
+#reviews, #booking, #contact {
+  padding: 50px 10%;
+  background-color: #FFF;
+  margin-top: 20px; /* Spacing between sections */
+  ;
+}
+
+/* Footer Enhancements */
+footer {
+  background-color: #007BFF; /* Matching header */
+  color: #FFF;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px; /* Ensures spacing from the last section */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      padding: 20px;
+  }
+  #services, #reviews {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+.review-item {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Align items vertically in the center */
+  gap: 20px; /* Optional: adds some space between the image and the text */
+  background-color: #f9f9f9;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.review-item img {
+  width: 100px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.main-image {
+  width: fit-content;
+}
+#main-image h2, #ammar{
+  font-size: 59px; /* Adjust the size as needed */
+  font-family: 'Cursive', fantasy; /* Example of a fancier font style */
+  color: chartreuse; /* Example color, adjust as needed */
+}
+
+body {
+  background: repeating-linear-gradient(
+    45deg,
+    red,
+    red 10%,
+    white 10%,
+    white 20%,
+    blue 20%,
+    blue 30%
+  );
+  background-size: 150% 150%;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+  gap: 5px;
+}
+
+.day {
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+  cursor: not-allowed; /* Default cursor for non-selectable days */
+}
+
+.day.selectable {
+  cursor: pointer; /* Indicates the day can be selected */
+}
+
+.day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
